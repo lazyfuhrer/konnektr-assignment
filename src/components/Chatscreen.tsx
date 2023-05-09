@@ -48,11 +48,7 @@ export default function ChatScreen (){
         <Image onClick={handleSendMessage} src={"/images/send.svg"} width={30} height={30} alt="send"/>
       </div>
       {/* Hide scrollbar in webkit browsers */}
-      <style jsx>{`
-        .overflow-y-auto::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
+      <style jsx>{` .overflow-y-auto::-webkit-scrollbar { display: none;} `}</style>
     </div>
   );
 };
