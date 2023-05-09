@@ -2,7 +2,7 @@
 export default function Chatscreen() {
   return (
     <>
-    <div className="w-1/2 bg-gray-200">
+    <div className="bg-gray-200 p-3">
         <div className="flex flex-col h-full">
             <div className="flex-grow p-4 overflow-y-scroll">
             {/* Dummy Chat Messages */}
