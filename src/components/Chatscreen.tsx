@@ -44,7 +44,7 @@ export default function ChatScreen (){
       {/* Message section */}
       <div className="flex items-center p-5" style={{ zIndex: 1 }}>
         <Image src={"/images/attachment.svg"} width={30} height={30} alt="attachments"/>
-        <input type="text" value={message} onChange={(e) => setMessage(e.target.value)} className="flex-1 px-4 py-2 bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-[#436475]" placeholder="Message"/>
+        <input type="text" value={message} onChange={(e) => setMessage(e.target.value)} className="flex-1 px-4 py-2 bg-gray-200 font-light focus:outline-none focus:ring-2 focus:ring-blue-500 text-[#436475]" placeholder="Message"/>
         <Image onClick={handleSendMessage} src={"/images/send.svg"} width={30} height={30} alt="send"/>
       </div>
       {/* Hide scrollbar in webkit browsers */}
