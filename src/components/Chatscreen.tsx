@@ -26,7 +26,7 @@ export default function ChatScreen (){
           <Image src={"/images/video.svg"} width={20} height={20} alt="video"/>
         </div>
       </div>
-
+      {/* Chat area */}
       <div className="flex-1 flex flex-col overflow-y-auto">
         {messages.map((msg, idx) => (
           <div key={idx} className={`flex items-center my-2 ${ idx % 2 === 0 ? "justify-start" : "justify-end"}`}>
@@ -34,7 +34,7 @@ export default function ChatScreen (){
           </div>
         ))}
       </div>
-
+      {/* Message section */}
       <div className="flex items-center p-5" style={{ zIndex: 1 }}>
         <Image src={"/images/attachment.svg"} width={30} height={30} alt="attachments"/>
         <input type="text" value={message} onChange={(e) => setMessage(e.target.value)} className="flex-1 px-4 py-2 bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-[#436475]" placeholder="Message"/>
