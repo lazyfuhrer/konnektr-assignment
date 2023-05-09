@@ -40,7 +40,7 @@ export default function Sidebar() {
         <li className="flex items-center px-4 py-2 text-[#436475] font-bold cursor-pointer">
           <div className="flex items-center ">
             <Image src={"/images/messages.svg"} width={25} height={25} alt="Messages" />
-            <span className="ml-5 text-[#FE06C7]">Messages</span>
+            <span className="ml-5 bg-gradient-to-br from-pink-500 to-purple-600 text-transparent bg-clip-text">Messages</span>
           </div>
         </li>
       </ul>
@@ -48,7 +48,7 @@ export default function Sidebar() {
         <Image className='rounded-full' src={"/images/profile.svg"} width={35} height={35} alt="profile"/>
         <div className="flex flex-col">
           <span className="text-sm font-semibold">User</span>
-          <span className="text-xs font-normal text-[#FE06C7]">@shivrxj.lens</span>
+          <span className="text-xs font-normal bg-gradient-to-br from-pink-500 to-purple-600 text-transparent bg-clip-text">@shivrxj.lens</span>
         </div>
         <Image src={"/images/bell.svg"} width={17} height={17} alt="bell"/>
         <Image src={"/images/settings.svg"} width={17} height={17} alt="settings"/>

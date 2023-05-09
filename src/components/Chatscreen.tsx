@@ -34,7 +34,7 @@ export default function ChatScreen (){
       <div className="flex-1 flex flex-col overflow-y-auto">
         {messages.map((msg, idx) => (
           <div key={idx} className={`flex items-start my-2 ${ idx % 2 === 0 ? "ml-5 justify-start" : "justify-end mr-5"}`}>
-            <div className={`max-w-xs px-4 py-2 rounded-lg ${ idx % 2 === 0 ? "bg-[#FE06C7] text-white" : "bg-white text-black " }`}>
+            <div className={`max-w-xs px-4 py-2 rounded-lg ${ idx % 2 === 0 ? "bg-gradient-to-br from-pink-500 to-purple-600 text-white" : "bg-white text-black " }`}>
               <p className="text-base">{msg}</p>
               <p className="text-xs text-gray-400 text-right mt-1">{moment().format("h:mm A")}</p>
             </div>
