@@ -4,6 +4,7 @@ import { useState } from "react";
 export default function ChatScreen (){
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<string[]>([]);
+
   const [recipient, setRecipient] = useState({
     name: "Shivrajjj",
     profileImage: "/images/profileBig.svg"
@@ -32,11 +33,15 @@ export default function ChatScreen (){
           className="w-12 h-12 rounded-full mr-4"
         />
         <div className="flex-1">
-          <p className="text-lg font-semibold">{recipient.name}</p>
+          <p className="text-lg font-semibold text-[#436475]">{recipient.name}</p>
         </div>
-        <Image src={"/images/call.svg"} width={20} height={20} alt="call"/>
-        <Image src={"/images/video.svg"} width={20} height={20} alt="video"/>
+        <div className="flex flex-row cursor-pointer">
+          <Image className="mr-7" src={"/images/call.svg"} width={20} height={20} alt="call"/>
+          <Image src={"/images/video.svg"} width={20} height={20} alt="video"/>
+        </div>
+        
       </div>
+
       <div className="flex-1 flex flex-col overflow-y-auto">
         {messages.map((msg, idx) => (
           <div
@@ -58,13 +63,13 @@ export default function ChatScreen (){
         ))}
       </div>
 
-      <div className="flex items-center bg-wheat">
+      <div className="flex items-center">
       <Image src={"/images/attachment.svg"} width={30} height={30} alt="attachments"/>
         <input
           type="text"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="flex-1 px-4 py-2 rounded-full bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="flex-1 px-4 py-2 bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
           placeholder="Message"
         />
         <Image onClick={handleSendMessage} src={"/images/send.svg"} width={30} height={30} alt="send"/>
