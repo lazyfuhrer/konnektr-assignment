@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const ChatScreen = () => {
+export default function ChatScreen (){
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<string[]>([]);
   const [recipient, setRecipient] = useState({
@@ -58,7 +58,8 @@ const ChatScreen = () => {
         ))}
       </div>
 
-      <div className="flex items-center">
+      <div className="flex items-center bg-wheat">
+      <Image src={"/images/attachment.svg"} width={30} height={30} alt="attachments"/>
         <input
           type="text"
           value={message}
@@ -66,10 +67,8 @@ const ChatScreen = () => {
           className="flex-1 px-4 py-2 rounded-full bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
           placeholder="Message"
         />
-        <Image onClick={handleSendMessage} src={"/images/send.svg"} width={18} height={18} alt="send"/>
+        <Image onClick={handleSendMessage} src={"/images/send.svg"} width={30} height={30} alt="send"/>
       </div>
     </div>
   );
 };
-
-export default ChatScreen;
