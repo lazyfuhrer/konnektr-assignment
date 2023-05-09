@@ -29,7 +29,7 @@ export default function Chatlist() {
   ];
   return (
     <div className="w-5/6 mx-auto text-[#436475]">
-      <div className="flex items-center justify-between w-full h-20 px-5 rounded-3xl">
+      <div className="flex items-center justify-between w-full h-20 px-5 rounded-3xl mt-5 mb-5">
         <div className="w-310 h-46 bg-gray-100 rounded-md flex items-center px-4 bg-red">
           <FaSearch className="text-gray-400 mr-3" />
           <input
@@ -45,7 +45,7 @@ export default function Chatlist() {
           <div className="flex items-center space-x-2">
             <Image className='rounded-full' src={"/images/profile.svg"} width={50} height={50} alt="profile"/>
             {isOnline && (
-              <div className="absolute bottom-0 right-0">
+              <div className="absolute bottom-0 right-0 left-0 top-0">
                 <FaCircle className="text-green-500 text-xs" />
               </div>
             )}
