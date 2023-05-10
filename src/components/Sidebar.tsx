@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-export default function Sidebar() {
+export default function Sidebar(): React.ReactElement {
   return (
     <div className="flex flex-col h-full lg:h-screen bg-gray-100">
       <div className="flex items-center justify-center h-16 lg:h-40 text-[#436475]">

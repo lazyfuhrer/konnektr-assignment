@@ -1,8 +1,13 @@
 import Image from "next/image";
 import { FaSearch } from "react-icons/fa";
 
-export default function Chatlist() {
-  const timeStamp = [
+interface TimeStamp {
+  isOnline: boolean;
+  time: string;
+}
+
+export default function Chatlist(): JSX.Element {
+  const timeStamp: TimeStamp[] = [
     { isOnline: true,
       time: "2 minutes",
     },
@@ -58,5 +63,5 @@ export default function Chatlist() {
         </div>
       ))}
     </div>
-  );  
+  );
 };

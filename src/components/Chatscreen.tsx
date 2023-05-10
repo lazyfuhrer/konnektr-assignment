@@ -5,22 +5,24 @@ import { Dialog } from "@headlessui/react";
 import Draggable from "react-draggable";
 import { FaPhoneSlash, FaPhone, FaVideo, FaCompress, FaExpand } from "react-icons/fa";
 
-export default function ChatScreen (){
-  const [message, setMessage] = useState("");
+export default function ChatScreen (): JSX.Element {
+  const [message, setMessage] = useState<string>("");
   const [messages, setMessages] = useState<string[]>([]);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isCalling, setIsCalling] = useState<boolean>(false);
   const [isRinging, setIsRinging] = useState<boolean>(false);
-  const [isFullScreen, setIsFullScreen] = useState(false);
+  const [isFullScreen, setIsFullScreen] = useState<boolean>(false);
   const [callDuration, setCallDuration] = useState<number>(0);
   const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
   const recipient = { name: "Shivrajjj", profileImage: "/images/profileBig.svg" };
-  const handleSendMessage = () => {
+
+  const handleSendMessage = (): void => {
     if (message.trim().length === 0) return;
     setMessages([...messages, message.trim()]);
     setMessage("");
   };
-  function closeModal(): void {
+
+  const closeModal = (): void => {
     if (timer !== null) {
       clearInterval(timer);
     }
@@ -29,11 +31,13 @@ export default function ChatScreen (){
     setIsRinging(false);
     setCallDuration(0);
     setTimer(null);
-  }
-  function openModal(): void {
+  };
+
+  const openModal = (): void => {
     setIsOpen(true);
-  }
-  function handleCallButtonClick(): void {
+  };
+
+  const handleCallButtonClick = (): void => {
     setIsRinging(true);
     setTimeout(() => {
       setIsRinging(false);
@@ -44,8 +48,9 @@ export default function ChatScreen (){
         }, 1000)
       );
     }, 5000);
-  }
-  function handleCutCallClick(): void {
+  };
+
+  const handleCutCallClick = (): void => {
     if (timer !== null) {
       clearInterval(timer);
     }
@@ -53,8 +58,10 @@ export default function ChatScreen (){
     setIsRinging(false);
     setCallDuration(0);
     setTimer(null);
-  }
-  const toggleFullScreen = () => setIsFullScreen(!isFullScreen);
+  };
+
+  const toggleFullScreen = (): void => setIsFullScreen(!isFullScreen);
+
   const minutes = Math.floor(callDuration / 60).toString().padStart(2, "0");
   const seconds = (callDuration % 60).toFixed(0).toString().padStart(2, "0");
   return (
