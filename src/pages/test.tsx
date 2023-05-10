@@ -4,7 +4,7 @@ import Draggable from 'react-draggable';
 import { FaPhoneSlash, FaPhone, FaVideo } from 'react-icons/fa';
 
 export default function MyModal() {
-  let [isOpen, setIsOpen] = useState(true);
+  let [isOpen, setIsOpen] = useState(false);
   function closeModal() {
     setIsOpen(false);
   }
