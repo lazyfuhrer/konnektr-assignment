@@ -63,7 +63,7 @@ export default function MyModal(): JSX.Element {
                     <span className="text-xs">{isCalling ? `${minutes}:${seconds}` : isRinging ? "Ringing..." : "Ready to call?"}</span>
                   </div>
                   <div className="flex justify-center">
-                    <button className={` text-white font-bold py-2 px-3 rounded-full ${ isCalling || isRinging ? 'bg-[#436475]' : 'bg-[#14D696]'}`} onClick={handleCutCallClick} disabled={isCalling || isRinging}>
+                    <button className={` text-white font-bold py-2 px-3 rounded-full ${ isCalling || isRinging ? 'bg-[#436475]' : 'bg-[#14D696]'}`} onClick={handleCallButtonClick} disabled={isCalling || isRinging}>
                       <FaVideo className="w-5 h-5" />
                     </button>
                     <div className="mx-2"></div>
