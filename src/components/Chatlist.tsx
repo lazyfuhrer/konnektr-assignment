@@ -43,7 +43,7 @@ export default function Chatlist() {
       {timeStamp.map(({isOnline, time}, index) => (
         <div key={index} className="flex space-x-4 text-[#436475] items-center justify-between h-20 p-5 rounded-md border border-gray-200">
           <div className="flex items-center space-x-2">
-            <div className="relative flex-shrink-0">
+            <div className="relative flex-shrink-0 mr-1">
               <Image className='rounded-full' src={"/images/profile.svg"} width={50} height={50} alt="profile"/>
               {isOnline && (
                 <div className="absolute w-4 h-4 bg-green-500 rounded-full -bottom-1 -right-1"></div>
