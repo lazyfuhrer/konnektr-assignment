@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FaCircle, FaSearch } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 
 export default function Chatlist() {
   const timeStamp = [
@@ -29,7 +29,7 @@ export default function Chatlist() {
   ];
   return (
     <div className="w-5/6 mx-auto text-[#436475]">
-      <div className="flex items-center justify-between w-full h-20 px-5 rounded-3xl mt-5 mb-5">
+      <div className="flex items-center justify-between w-full h-20 px-5 rounded-3xl mt-5 mb-5 border border-gray-400">
         <div className="w-310 h-46 bg-gray-100 rounded-md flex items-center px-4 bg-red">
           <FaSearch className="text-gray-400 mr-3" />
           <input
@@ -41,14 +41,14 @@ export default function Chatlist() {
       </div>
       <h1 className="text-left font-bold text-xl mb-5">Chats</h1>
       {timeStamp.map(({isOnline, time}, index) => (
-        <div key={index} className="flex space-x-4 text-[#436475] items-center justify-between h-20 p-5 rounded-md">
+        <div key={index} className="flex space-x-4 text-[#436475] items-center justify-between h-20 p-5 rounded-md border border-gray-200">
           <div className="flex items-center space-x-2">
-            <Image className='rounded-full' src={"/images/profile.svg"} width={50} height={50} alt="profile"/>
-            {isOnline && (
-              <div className="absolute bottom-0 right-0 left-0 top-0">
-                <FaCircle className="text-green-500 text-xs" />
-              </div>
-            )}
+            <div className="relative flex-shrink-0">
+              <Image className='rounded-full' src={"/images/profile.svg"} width={50} height={50} alt="profile"/>
+              {isOnline && (
+                <div className="absolute w-4 h-4 bg-green-500 rounded-full -bottom-1 -right-1"></div>
+              )}
+            </div>
             <div className="flex flex-col">
               <span className="text-sm font-semibold">Shivrajjj</span>
               <span className="text-xs font-light">Hey there....</span>
@@ -58,5 +58,5 @@ export default function Chatlist() {
         </div>
       ))}
     </div>
-  );
+  );  
 };

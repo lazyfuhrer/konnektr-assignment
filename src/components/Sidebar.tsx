@@ -2,45 +2,45 @@ import Image from 'next/image';
 
 export default function Sidebar() {
   return (
-    <div className="flex flex-col h-screen bg-gray-100">
-      <div className="flex items-center justify-center h-40 text-[#436475]">
-        <span className="text-2xl font-bold -ml-20">Konnektr</span>
+    <div className="flex flex-col h-full lg:h-screen bg-gray-100">
+      <div className="flex items-center justify-center h-16 lg:h-40 text-[#436475]">
+        <span className="text-2xl font-bold">Konnektr</span>
       </div>
-      <ul className="flex-grow flex flex-col justify-center text-lg ml-20">
-        <li className="flex px-4 py-2 text-[#436475] mb-4 font-bold cursor-pointer">
+      <ul className="flex-grow flex flex-col justify-center text-lg ml-4 lg:ml-20">
+        <li className="flex px-2 lg:px-4 py-2 text-[#436475] mb-2 lg:mb-4 font-bold cursor-pointer">
           <div className="flex">
             <Image src={"/images/home.svg"} width={25} height={25} alt="Home" />
-            <span className="ml-5">Home</span>
+            <span className="ml-2 lg:ml-5">Home</span>
           </div>
         </li>
-        <li className="flex items-center px-4 py-2 text-[#436475] mb-4 font-bold cursor-pointer">
+        <li className="flex items-center px-2 lg:px-4 py-2 text-[#436475] mb-2 lg:mb-4 font-bold cursor-pointer">
           <div className="flex items-center">
             <Image src={"/images/connections.svg"} width={25} height={25} alt="Connections" />
-            <span className="ml-5">Konnektions</span>
+            <span className="ml-2 lg:ml-5">Connections</span>
           </div>
         </li>
-        <li className="flex items-center px-4 py-2 text-[#436475] mb-4 font-bold cursor-pointer">
+        <li className="flex items-center px-2 lg:px-4 py-2 text-[#436475] mb-2 lg:mb-4 font-bold cursor-pointer">
           <div className="flex items-center">
             <Image src={"/images/communities.svg"} width={25} height={25} alt="Communities" />
-            <span className="ml-5">Communities</span>
+            <span className="ml-2 lg:ml-5">Communities</span>
           </div>
         </li>
-        <li className="flex items-center px-4 py-2 text-[#436475] mb-4 font-bold cursor-pointer">
+        <li className="flex items-center px-2 lg:px-4 py-2 text-[#436475] mb-2 lg:mb-4 font-bold cursor-pointer">
           <div className="flex items-center">
             <Image src={"/images/store.svg"} width={25} height={25} alt="Quests" />
-            <span className="ml-5">Quests</span> 
+            <span className="ml-2 lg:ml-5">Quests</span> 
           </div>
         </li>
-        <li className="flex items-center px-4 py-2 text-[#436475] mb-4 font-bold cursor-pointer">
+        <li className="flex items-center px-2 lg:px-4 py-2 text-[#436475] mb-2 lg:mb-4 font-bold cursor-pointer">
           <div className="flex items-center">
             <Image src={"/images/store.svg"} width={25} height={25} alt="Store" />
-            <span className="ml-5">Store</span>
+            <span className="ml-2 lg:ml-5">Store</span>
           </div>
         </li>
-        <li className="flex items-center px-4 py-2 text-[#436475] font-bold cursor-pointer">
+        <li className="flex items-center px-2 lg:px-4 py-2 text-[#436475] font-bold cursor-pointer">
           <div className="flex items-center ">
             <Image src={"/images/messages.svg"} width={25} height={25} alt="Messages" />
-            <span className="ml-5 bg-gradient-to-br from-pink-500 to-purple-600 text-transparent bg-clip-text">Messages</span>
+            <span className="ml-2 lg:ml-5 bg-gradient-to-br from-pink-500 to-purple-600 text-transparent bg-clip-text">Messages</span>
           </div>
         </li>
       </ul>
