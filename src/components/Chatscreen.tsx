@@ -75,7 +75,7 @@ export default function ChatScreen (){
         <hr className="border-t border-gray-400 flex-grow mx-3" />
       </div>
       {/* Chat area */}
-      <div className="flex-1 flex flex-col overflow-y-auto">
+      <div className="flex-1 flex flex-col overflow-y-auto" style={{ zIndex: 1 }}>
         {messages.map((msg, idx) => (
           <div key={idx} className={`flex items-start my-2 ${ idx % 2 === 0 ? "ml-5 justify-start" : "justify-end mr-5"}`}>
             <div className={`max-w-xs px-4 py-2 rounded-lg ${ idx % 2 === 0 ? "bg-gradient-to-br from-pink-500 to-purple-600 text-white" : "bg-white text-black " }`}>
