@@ -69,7 +69,7 @@ export default function ChatScreen (): JSX.Element {
     <div className=" z flex flex-col h-screen bg-no-repeat bg-center bg-cover" style={{ backgroundImage: "url(images/chatbg.svg)" }}>
       {/* Header section */}
       <div className="flex items-center p-4 bg-white shadow-lg">
-        <img src={recipient.profileImage} alt={recipient.name} className="w-12 h-12 rounded-full mr-4"/>
+        <Image width={12} height={12} src={recipient.profileImage} alt={recipient.name} className="w-12 h-12 rounded-full mr-4"/>
         <div className="flex-1">
           <p className="text-lg font-semibold text-[#436475]">{recipient.name}</p>
         </div>
@@ -113,7 +113,7 @@ export default function ChatScreen (): JSX.Element {
                   </button>
                   <div  className="drag-handle bg-white rounded-lg p-4">
                     <div className="flex flex-col items-center mb-4 text-[#436475] font-semibold">
-                      <img src="/images/maryBig.svg" alt="Caller Image" className={`${isFullScreen ? 'h-40 w-40' : 'h-20 w-20'} rounded-full`}/>
+                      <Image width={`${isFullScreen ? '40' : '20'}`} height={`${isFullScreen ? '40' : '20'}`} src="/images/maryBig.svg" alt="Caller Image" className={`${isFullScreen ? 'h-40 w-40' : 'h-20 w-20'} rounded-full`}/>
                       <span className="text-xl">Mary Jane</span>
                       <span className="text-xs">{isCalling ? `${minutes}:${seconds}` : isRinging ? "Ringing..." : "Ready to call?"}</span>
                     </div>
