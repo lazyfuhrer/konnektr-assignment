@@ -4,6 +4,7 @@ import Sidebar from '@/components/Sidebar';
 
 export default function Home(): JSX.Element {
   return (
+    // Main page
     <div className="flex flex-col md:flex-row w-screen h-screen">
       <div className="w-full md:w-1/4 bg-gray-100 md:block hidden">
         <Sidebar/>
