@@ -1,9 +1,8 @@
 import Chatlist from '@/components/Chatlist';
 import Chatscreen from '@/components/Chatscreen';
 import Sidebar from '@/components/Sidebar';
-import React from 'react';
 
-export default function Home(): React.ReactElement {
+export default function Home(): JSX.Element {
   return (
     <div className="flex flex-col md:flex-row w-screen h-screen">
       <div className="w-full md:w-1/4 bg-gray-100 md:block hidden">

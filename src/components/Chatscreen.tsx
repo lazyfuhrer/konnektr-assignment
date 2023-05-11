@@ -1,6 +1,6 @@
 import moment from "moment";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Dialog } from "@headlessui/react";
 import Draggable from "react-draggable";
 import { FaPhoneSlash, FaPhone, FaVideo, FaCompress, FaExpand } from "react-icons/fa";
@@ -14,6 +14,7 @@ export default function ChatScreen (): JSX.Element {
   const [isFullScreen, setIsFullScreen] = useState<boolean>(false);
   const [callDuration, setCallDuration] = useState<number>(0);
   const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
+  const dialogRef = useRef(null);
   const recipient = { name: "Shivrajjj", profileImage: "/images/profileBig.svg" };
 
   const handleSendMessage = (): void => {
@@ -104,13 +105,13 @@ export default function ChatScreen (): JSX.Element {
       <>
         <Dialog open={isOpen} onClose={closeModal} className={`fixed inset-0 z-10 overflow-y-auto ${isFullScreen ? '' : 'bg-black bg-opacity-25'}`}>
           <div className={`${isFullScreen ? 'fixed inset-0 z-20 bg-white flex justify-center items-center' : 'min-h-screen bg-black bg-opacity-25'} flex items-center justify-center p-4`}>
-            <Draggable handle=".drag-handle">
-              <div>
+            <Draggable nodeRef={dialogRef} handle=".drag-handle">
+              <div ref={dialogRef}>
                 <Dialog.Panel className={`w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all ${isFullScreen ? 'h-screen flex flex-col justify-center items-center' : ''}`}>
                   <button className="absolute top-0 left-0 m-4 text-gray-500" onClick={toggleFullScreen}>
                     {isFullScreen ? <FaCompress /> : <FaExpand />}
                   </button>
-                  <div className="drag-handle bg-white rounded-lg p-4">
+                  <div  className="drag-handle bg-white rounded-lg p-4">
                     <div className="flex flex-col items-center mb-4 text-[#436475] font-semibold">
                       <img src="/images/maryBig.svg" alt="Caller Image" className={`${isFullScreen ? 'h-40 w-40' : 'h-20 w-20'} rounded-full`}/>
                       <span className="text-xl">Mary Jane</span>
